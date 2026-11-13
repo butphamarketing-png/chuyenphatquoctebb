@@ -592,7 +592,10 @@ footer.site h3::after {
     padding: 4px 2px 12px;
   }
   .carrier { flex: 0 0 300px; scroll-snap-align: start; }
-  .banner { height: 420px; }
+  .banner { height: auto; aspect-ratio: 16 / 9; }
+  .banner img { object-position: center center; }
+  .dots { bottom: 12px; }
+  .perks { margin-top: 12px; }
   h1 { font-size: 32px; }
   .top-right { display: none; }
   h1 { font-size: 30px; }
