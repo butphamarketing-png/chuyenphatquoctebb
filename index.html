@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B&amp;B Express | Chuyển phát quốc tế</title>
+  <link rel="stylesheet" href="css/site.css">
+  <script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion");</script>
+</head>
+<body>
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader-mark" aria-hidden="true">B&amp;B</div>
+    <svg class="loader-plane" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fe7c1a" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"/></svg>
+    <div class="loader-card">
+      <img class="loader-logo" src="assets/logo-bb.png" alt="B&amp;B Express">
+      <div class="loader-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p>Đang tải...</p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var el = document.getElementById("loader");
+      if (!el) return;
+      if (!document.documentElement.classList.contains("motion")) {
+        el.remove();
+        return;
+      }
+      window.setTimeout(function () { el.classList.add("logo-in"); }, 1150);
+      window.setTimeout(function () { el.classList.add("done"); }, 2600);
+      window.setTimeout(function () { el.remove(); }, 3050);
+    })();
+  </script>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="top-left">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z" fill="#fff"/></svg>
+        <span>Chuyển phát quốc tế</span><span class="sep">|</span><span>DHL • FedEx • UPS</span>
+      </div>
+      <div class="top-right">
+        <a href="lien-he.html#tru-so"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg> 38 Cộng Hòa, P. Tân Sơn Nhất, TP.HCM</a>
+        <a href="lien-he.html#kho"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-10.5z"/></svg> Kho: 38/6 đường Thiên Quang, xã Bà Điểm, TP.HCM</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo-bb.png" alt="B&amp;B Express, Nhanh chóng - An toàn - Tiết kiệm"></a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Chính">
+        <a class="active" href="index.html">Trang chủ</a>
+        <div class="nav-item"><a href="gioi-thieu.html">Giới thiệu <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a><div class="menu"><a href="gioi-thieu.html">Về công ty</a></div></div>
+        <div class="nav-item"><a href="dich-vu.html">Dịch vụ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a><div class="menu"><a href="dich-vu.html#nhanh">Chuyển phát nhanh</a><a href="dich-vu.html#bien">Đường biển</a></div></div>
+        <a href="bao-gia.html">Báo giá</a>
+        <a href="tra-cuu.html">Tra cứu</a>
+        <a href="cong-cu.html">Công cụ</a>
+        <a href="lien-he.html">Liên hệ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone" href="tel:0941192193"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8z"/></svg></i><span>0941 192 193</span></a>
+        <a class="btn" href="bao-gia.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg> Báo giá ngay</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="banner" aria-label="Ảnh">
+      <img class="on" src="assets/slides/1.jpg" alt="">
+      <img src="assets/slides/2.jpg" alt="">
+      <img src="assets/slides/3.jpg" alt="">
+      <button class="slide-btn prev" type="button" aria-label="Ảnh trước">‹</button>
+      <button class="slide-btn next" type="button" aria-label="Ảnh sau">›</button>
+      <div class="dots"></div>
+    </section>
+    <div class="wrap">
+      <div class="perks" data-reveal="up">
+        <div class="perk" data-reveal="item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#003174" stroke-width="1.6"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><div><strong>Gửi hàng quốc tế</strong><span>Đến nhiều quốc gia</span></div></div>
+        <div class="perk" data-reveal="item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#003174" stroke-width="1.6"><path d="M12 3 5 6v6c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6l-7-3z"/></svg><div><strong>An toàn, đúng hẹn</strong><span>Với các hãng uy tín</span></div></div>
+        <div class="perk" data-reveal="item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fe7c1a" stroke-width="1.6"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v4c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 11v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/></svg><div><strong>Chi phí hợp lý</strong><span>Theo khối lượng</span></div></div>
+        <div class="perk" data-reveal="item"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fe7c1a" stroke-width="1.6"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1"/><rect x="17" y="13" width="4" height="6" rx="1"/></svg><div><strong>Tư vấn nhanh</strong><span>Điện thoại hoặc Zalo</span></div></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="kicker" data-reveal="up">DỊCH VỤ</p>
+        <h2 class="center" data-reveal="up">Chuyển phát quốc tế qua các hãng uy tín</h2>
+        <div class="carriers">
+          <article class="carrier" data-reveal="item">
+            <img src="assets/carriers/dhl.png" alt="DHL Express">
+            <div class="body">
+              <h3>Thời gian giao</h3>
+              <table class="times"><tr><td>Express Worldwide</td><td>1–3 ngày làm việc</td></tr><tr><td>Economy Select</td><td>3–7 ngày</td></tr></table>
+              <h3>Phù hợp với</h3>
+              <p>Tài liệu, hàng mẫu và kiện cần giao nhanh tới Mỹ, Úc, Nhật, châu Âu.</p>
+              <a class="btn-line dhl" href="dich-vu.html#dhl">Xem dịch vụ DHL Express</a>
+            </div>
+          </article>
+          <article class="carrier" data-reveal="item">
+            <img src="assets/carriers/fedex.png" alt="FedEx">
+            <div class="body">
+              <h3>Thời gian giao</h3>
+              <table class="times"><tr><td>International Priority</td><td>1–3 ngày làm việc</td></tr><tr><td>International Economy</td><td>4–6 ngày</td></tr></table>
+              <h3>Phù hợp với</h3>
+              <p>Hàng thương mại điện tử và hàng mẫu cần cân bằng giữa tốc độ và chi phí.</p>
+              <a class="btn-line fedex" href="dich-vu.html#fedex">Xem dịch vụ FedEx</a>
+            </div>
+          </article>
+          <article class="carrier" data-reveal="item">
+            <img src="assets/carriers/ups.png" alt="UPS">
+            <div class="body">
+              <h3>Thời gian giao</h3>
+              <table class="times"><tr><td>Express Saver</td><td>1–3 ngày làm việc</td></tr><tr><td>Expedited</td><td>2–5 ngày</td></tr></table>
+              <h3>Phù hợp với</h3>
+              <p>Hàng nặng, kiện trên 30 kg và tuyến Mỹ, châu Âu.</p>
+              <a class="btn-line ups" href="dich-vu.html#ups">Xem dịch vụ UPS</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section routes-sec">
+      <div class="wrap">
+        <div class="routes-head" data-reveal="up">
+          <div>
+            <h2 class="routes-title">Tuyến phổ biến</h2>
+            <p class="sub">Những tuyến vận chuyển quốc tế được khách chọn nhiều nhất.</p>
+          </div>
+          <img class="routes-banner" src="assets/routes/banner.jpg" alt="">
+        </div>
+        <div class="route-grid">
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=US">
+            <img src="assets/routes/us.jpg" alt="New York">
+            <div class="lane-body">
+              <span class="lane-kicker">Tuyến chủ lực</span>
+              <strong>Gửi hàng đi Mỹ</strong>
+              <p>Chọn bao thuế trọn gói hoặc không bao thuế.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fus"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fus)"><rect width="24" height="24" fill="#b22234"/><g fill="#fff"><rect y="1.85" width="24" height="1.85"/><rect y="5.55" width="24" height="1.85"/><rect y="9.25" width="24" height="1.85"/><rect y="12.95" width="24" height="1.85"/><rect y="16.65" width="24" height="1.85"/><rect y="20.35" width="24" height="1.85"/></g><rect width="11" height="13" fill="#3c3b6e"/></g></svg>
+                <b>5–10 ngày</b>
+              </div>
+            </div>
+          </a>
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=AU">
+            <img src="assets/routes/au.jpg" alt="Sydney">
+            <div class="lane-body">
+              <span class="lane-kicker">Châu Đại Dương</span>
+              <strong>Gửi hàng đi Úc</strong>
+              <p>Thông quan, giao tận nhà toàn bang.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fau"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fau)"><rect width="24" height="24" fill="#012169"/><polygon fill="#fff" points="7,15 7.7,17.1 10,17.1 8.1,18.4 8.8,20.5 7,19.2 5.2,20.5 5.9,18.4 4,17.1 6.3,17.1"/><circle cx="17.2" cy="6.2" r="1.15" fill="#fff"/><circle cx="20.2" cy="9" r=".75" fill="#fff"/><circle cx="15.6" cy="9.6" r=".7" fill="#fff"/><circle cx="18.6" cy="12" r=".75" fill="#fff"/><circle cx="14.4" cy="7.2" r=".5" fill="#fff"/></g></svg>
+                <b>5–10 ngày</b>
+              </div>
+            </div>
+          </a>
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=CA">
+            <img src="assets/routes/ca.jpg" alt="Toronto">
+            <div class="lane-body">
+              <span class="lane-kicker">Bắc Mỹ</span>
+              <strong>Gửi hàng đi Canada</strong>
+              <p>Giao tận nhà trên toàn liên bang.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fca"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fca)"><rect width="24" height="24" fill="#fff"/><rect width="6" height="24" fill="#d80621"/><rect x="18" width="6" height="24" fill="#d80621"/><path fill="#d80621" d="M12 5l1 3.2 2.2-.8-1.2 2 2.4.4-2.2 1.2.6 2.2L12 11.6 9.2 13.2l.6-2.2-2.2-1.2 2.4-.4-1.2-2 2.2.8z"/></g></svg>
+                <b>7–14 ngày</b>
+              </div>
+            </div>
+          </a>
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=GB">
+            <img src="assets/routes/gb.jpg" alt="Luân Đôn">
+            <div class="lane-body">
+              <span class="lane-kicker">Châu Âu</span>
+              <strong>Gửi hàng đi Anh</strong>
+              <p>Hàng cá nhân và hàng thương mại.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fgb"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fgb)"><rect width="24" height="24" fill="#012169"/><path d="M0 0l24 24M24 0L0 24" stroke="#fff" stroke-width="4"/><path d="M0 0l24 24M24 0L0 24" stroke="#c8102e" stroke-width="2"/><rect x="10" width="4" height="24" fill="#fff"/><rect y="10" width="24" height="4" fill="#fff"/><rect x="11" width="2" height="24" fill="#c8102e"/><rect y="11" width="24" height="2" fill="#c8102e"/></g></svg>
+                <b>6–12 ngày</b>
+              </div>
+            </div>
+          </a>
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=KR">
+            <img src="assets/routes/kr.jpg" alt="Seoul">
+            <div class="lane-body">
+              <span class="lane-kicker">Châu Á</span>
+              <strong>Gửi hàng đi Hàn Quốc</strong>
+              <p>Seoul, Busan và toàn quốc.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fkr"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fkr)"><rect width="24" height="24" fill="#fff"/><circle cx="12" cy="12" r="5" fill="#cd2e3a"/><path fill="#0047a0" d="M12 7a5 5 0 0 1 0 10 2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 0 0-5z"/></g></svg>
+                <b>3–5 ngày</b>
+              </div>
+            </div>
+          </a>
+          <a class="lane" data-reveal="item" href="bao-gia.html?country=JP">
+            <img src="assets/routes/jp.jpg" alt="Nhật Bản">
+            <div class="lane-body">
+              <span class="lane-kicker">Châu Á</span>
+              <strong>Gửi hàng đi Nhật Bản</strong>
+              <p>Nhanh và tiết kiệm, phủ toàn quốc.</p>
+              <div class="lane-meta">
+                <svg class="flag" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fjp"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fjp)"><rect width="24" height="24" fill="#fff"/><circle cx="12" cy="12" r="5" fill="#bc002d"/></g></svg>
+                <b>3–5 ngày</b>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="routes-more">
+          <a class="btn routes-all" data-reveal="up" href="bao-gia.html">Tính cước các tuyến</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-sec">
+      <div class="wrap about-grid">
+        <img src="assets/slides/2.jpg" alt="Kho hàng B&amp;B" data-reveal="left">
+        <div data-reveal="right">
+          <h2 class="routes-title">Về chúng tôi</h2>
+          <p>B &amp; B International Express gửi hàng đi Mỹ, Úc, châu Âu và châu Á qua DHL, FedEx và UPS. Chúng tôi lo báo giá, đóng gói và thủ tục hải quan cho cá nhân và doanh nghiệp.</p>
+          <div class="values">
+            <span class="hop" aria-hidden="true"></span>
+            <ul>
+              <li><i></i><p><b>Chính xác:</b> Xử lý đơn hàng đúng quy định, minh bạch.</p></li>
+              <li><i></i><p><b>Nhanh chóng:</b> Vận chuyển đúng lộ trình, đáp ứng tiến độ.</p></li>
+              <li><i></i><p><b>Tiết kiệm:</b> Tối ưu chi phí, mang lại hiệu quả cao.</p></li>
+              <li><i></i><p><b>Hỗ trợ tận tâm:</b> Tư vấn và đồng hành trong suốt quá trình gửi hàng.</p></li>
+            </ul>
+          </div>
+          <a class="btn" href="gioi-thieu.html">Xem thêm</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" aria-labelledby="flow-title">
+      <div class="flow-sky" aria-hidden="true"></div>
+      <div class="wrap">
+        <h2 id="flow-title" class="flow-title" data-reveal="up">Quy trình gửi hàng chuyên nghiệp</h2>
+        <p class="flow-lead" data-reveal="up">Từ khâu tư vấn đến khi hàng đến tay người nhận, mọi bước đều được thực hiện chuyên nghiệp, nhanh chóng và an toàn.</p>
+        <div class="flow-track">
+          <svg class="flow-wave" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M60 48 C 150 18, 230 78, 300 48 S 450 18, 540 48 S 690 78, 780 48 S 930 18, 1020 48 S 1120 72, 1160 42" fill="none" stroke="#8fd4ff" stroke-width="4" stroke-linecap="round"/></svg>
+          <ol class="flow-steps">
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 16.5A6.5 6.5 0 1 1 8 6.2 5 5 0 0 1 17.5 8 4.2 4.2 0 0 1 17 16.2"/><path d="M8 14h5M8 11h7"/></svg></span>
+              <div><b>Bước 1</b><strong>Tư vấn và báo giá</strong><p>Tiếp nhận thông tin, tư vấn tuyến gửi phù hợp và báo giá nhanh.</p></div>
+            </li>
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span>
+              <div><b>Bước 2</b><strong>Nhận hàng tận nơi</strong><p>Hỗ trợ lấy hàng tận nơi cho khách ở TP.HCM.</p></div>
+            </li>
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 8v8l9 4 9-4V8"/><path d="M12 12v8"/></svg></span>
+              <div><b>Bước 3</b><strong>Kiểm tra và đóng gói</strong><p>Kiểm tra hàng hóa, đóng gói an toàn, đúng quy định vận chuyển.</p></div>
+            </li>
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/></svg></span>
+              <div><b>Bước 4</b><strong>Thủ tục hải quan</strong><p>Chuẩn bị hồ sơ, khai báo và làm thủ tục hải quan đầy đủ, nhanh chóng.</p></div>
+            </li>
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 16l20-6-7 2 2 6-4-3-3 3-1-5z"/></svg></span>
+              <div><b>Bước 5</b><strong>Vận chuyển quốc tế</strong><p>Gửi hàng qua mạng lưới DHL, FedEx, UPS đến quốc gia nhận.</p></div>
+            </li>
+            <li data-reveal="item">
+              <span class="bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 11V7a2 2 0 0 1 2-2h1l2 3h3a2 2 0 0 1 2 2v3"/><path d="M4 14h9l2-2h5v5a2 2 0 0 1-2 2H8"/><path d="M8 19v-5"/></svg></span>
+              <div><b>Bước 6</b><strong>Giao hàng thành công</strong><p>Giao hàng tận tay người nhận theo địa chỉ đã đăng ký.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <h2 id="why-title" class="why-title" data-reveal="up">Vì sao chọn B&amp;B Express?</h2>
+        <p class="why-lead" data-reveal="up">Giải pháp gửi hàng quốc tế uy tín, an toàn và tối ưu cho cá nhân, doanh nghiệp.</p>
+        <div class="why-grid">
+          <article data-reveal="item">
+            <span class="why-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 27h8l4-5 5 4 4-6 3 3h8" fill="none" stroke="#0b3f86" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M6 27v7h9M33 27v7h9" fill="none" stroke="#0b3f86" stroke-width="2.2" stroke-linecap="round"/><path d="M30 14l2-3.2M34 16l3.2-.8" stroke="#fe7c1a" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <strong>Uy tín</strong>
+            <p>Gửi chính ngạch qua mạng lưới DHL, FedEx và UPS.</p>
+          </article>
+          <article data-reveal="item">
+            <span class="why-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 18l14-7 14 7-14 7-14-7z" fill="none" stroke="#0b3f86" stroke-width="2.2" stroke-linejoin="round"/><path d="M10 18v12l14 7 14-7V18" fill="none" stroke="#0b3f86" stroke-width="2.2"/><path d="M24 25v12" stroke="#0b3f86" stroke-width="2.2"/><circle cx="34" cy="32" r="6" fill="#fff" stroke="#fe7c1a" stroke-width="2"/><path d="M31.5 32l1.6 1.6 3.2-3.4" fill="none" stroke="#fe7c1a" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <strong>An toàn</strong>
+            <p>Hàng hóa được kiểm tra, đóng gói chuyên nghiệp.</p>
+          </article>
+          <article data-reveal="item">
+            <span class="why-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="22" cy="24" r="10" fill="none" stroke="#0b3f86" stroke-width="2.2"/><path d="M12 24h20M22 14c2.4 2.6 3.6 5.4 3.6 10s-1.2 7.4-3.6 10c-2.4-2.6-3.6-5.4-3.6-10s1.2-7.4 3.6-10z" fill="none" stroke="#0b3f86" stroke-width="2"/><path d="M26 20c6-2 12-1 16 2" fill="none" stroke="#fe7c1a" stroke-width="2.2" stroke-linecap="round"/><path d="M38 16l4 6-6 1" fill="none" stroke="#fe7c1a" stroke-width="2.2" stroke-linejoin="round"/></svg></span>
+            <strong>Nhanh chóng</strong>
+            <p>Thời gian vận chuyển tối ưu, đúng cam kết.</p>
+          </article>
+          <article data-reveal="item">
+            <span class="why-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 24a14 14 0 0 1 28 0" fill="none" stroke="#0b3f86" stroke-width="2.2"/><rect x="7" y="22" width="7" height="10" rx="3" fill="none" stroke="#0b3f86" stroke-width="2.2"/><rect x="34" y="22" width="7" height="10" rx="3" fill="none" stroke="#0b3f86" stroke-width="2.2"/><path d="M34 32v2a5 5 0 0 1-5 5h-4" fill="none" stroke="#0b3f86" stroke-width="2.2" stroke-linecap="round"/><circle cx="22" cy="39" r="2.2" fill="#fe7c1a"/></svg></span>
+            <strong>Hỗ trợ tận tâm</strong>
+            <p>Tư vấn và xử lý mọi yêu cầu kịp thời.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" data-reveal="up" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <h2 id="reviews-title" class="reviews-title">Phản hồi khách hàng</h2>
+        <p class="reviews-lead">Những chia sẻ minh họa. Sẽ thay bằng phản hồi thật của khách B&amp;B.</p>
+        <div class="reviews-stage">
+          <article class="quote-card">
+            <span class="qmark" aria-hidden="true">“</span>
+            <p class="quote-text"></p>
+            <div class="quote-foot">
+              <span class="avatar" aria-hidden="true"></span>
+              <div>
+                <strong>Khách hàng</strong>
+                <span class="stars" aria-label="5 sao">★★★★★</span>
+              </div>
+              <time class="quote-time"></time>
+            </div>
+          </article>
+          <div class="chat-stack" aria-hidden="true">
+            <div class="chat-card back"></div>
+            <div class="chat-card">
+              <p class="msg in">Cần gửi hàng đi Mỹ, bên mình nhận không ạ?</p>
+              <p class="msg out">Dạ nhận ạ. Em báo giá theo số kg.</p>
+              <p class="msg in quote-mini"></p>
+              <p class="chat-meta"><span class="chat-time"></span><span class="heart">♥ 1</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-nav">
+          <button type="button" class="rev-prev" aria-label="Phản hồi trước">‹</button>
+          <div class="rev-dots"></div>
+          <button type="button" class="rev-next" aria-label="Phản hồi sau">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="consult" aria-labelledby="consult-title">
+      <div class="wrap consult-grid">
+        <div data-reveal="left">
+          <h2 id="consult-title" class="consult-title">Liên hệ với B&amp;B Express</h2>
+          <p>Quý khách cần gửi hàng quốc tế, nhận báo giá hoặc tư vấn dịch vụ? Hãy để lại thông tin, chúng tôi sẽ liên hệ ngay.</p>
+        </div>
+        <form class="consult-card" id="consult-form" data-reveal="right" novalidate>
+          <h3>Gửi yêu cầu tư vấn</h3>
+          <div class="consult-row">
+            <label>Họ và tên
+              <input name="name" required autocomplete="name" placeholder="Họ và tên *">
+            </label>
+            <label>Số điện thoại
+              <input name="phone" required autocomplete="tel" inputmode="tel" placeholder="Số điện thoại *">
+            </label>
+          </div>
+          <label>Email
+            <input name="email" type="email" autocomplete="email" placeholder="Email">
+          </label>
+          <label>Nhu cầu dịch vụ
+            <select name="need" required>
+              <option value="">Nhu cầu dịch vụ *</option>
+              <option>Gửi hàng nhanh</option>
+              <option>Gửi hàng tiết kiệm</option>
+              <option>Đường biển</option>
+              <option>Tư vấn khác</option>
+            </select>
+          </label>
+          <label>Nội dung yêu cầu
+            <textarea name="note" rows="3" placeholder="Nội dung yêu cầu"></textarea>
+          </label>
+          <p class="consult-msg" role="status"></p>
+          <button class="btn" type="submit">Gửi thông tin</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <h2 data-reveal="up">Hai điểm nhận hàng</h2>
+        <p class="sub">Gọi 0941 192 193 trước khi mang hàng tới.</p>
+        <div class="grid-2">
+          <article class="card" data-reveal="item"><h3>Trụ sở</h3><p>38 Cộng Hòa, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh.</p></article>
+          <article class="card" data-reveal="item"><h3>Kho</h3><p>38/6 đường Thiên Quang, xã Bà Điểm, Thành phố Hồ Chí Minh.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="foot-photo" aria-hidden="true"></div>
+    <div class="wrap foot-main">
+      <div class="foot-brand">
+        <a href="index.html"><img src="assets/logo-bb.png" alt="B&amp;B Express"></a>
+        <p>B&amp;B Express nhận gửi hàng quốc tế qua DHL, FedEx và UPS, hỗ trợ lấy hàng tại TP.HCM.</p>
+        <div class="foot-social">
+          <span class="soc" title="Facebook đang cập nhật"><svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#1877F2"/><path fill="#fff" d="M20.2 27v-8.2h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V9.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3h-2.7v3.1H17V27h3.2z"/></svg></span>
+          <a class="soc" href="https://zalo.me/0941192193" target="_blank" rel="noopener" aria-label="Zalo"><svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="#0068FF"/><text x="18" y="22" text-anchor="middle" fill="#fff" font-size="9" font-family="Arial, sans-serif" font-weight="700">Zalo</text></svg></a>
+          <span class="soc" title="YouTube đang cập nhật"><svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="8" fill="#FF0033"/><path fill="#fff" d="M15 13.2v9.6l8.2-4.8L15 13.2z"/></svg></span>
+        </div>
+      </div>
+      <div>
+        <h3>Dịch vụ</h3>
+        <ul class="foot-links">
+          <li><a href="dich-vu.html">Gửi hàng quốc tế</a></li>
+          <li><a href="dich-vu.html#nhanh">Vận chuyển hàng hóa</a></li>
+          <li><a href="dich-vu.html#bien">Đường biển</a></li>
+          <li><a href="lien-he.html">Tư vấn giải pháp logistics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Thông tin</h3>
+        <ul class="foot-links">
+          <li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+          <li><a href="bao-gia.html">Bảng giá</a></li>
+          <li><a href="tra-cuu.html">Tra cứu vận đơn</a></li>
+          <li><a href="dieu-khoan.html">Chính sách &amp; quy định</a></li>
+        </ul>
+      </div>
+      <div class="foot-contact">
+        <h3>Liên hệ</h3>
+        <p class="foot-line"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span>38 Cộng Hòa, Phường Tân Sơn Nhất, TP.HCM<br>Kho: 38/6 đường Thiên Quang, xã Bà Điểm</span></p>
+        <p class="foot-line"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8z"/></svg><a href="tel:0941192193">0941 192 193</a></p>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <div class="wrap foot-bar-inner">
+        <span>© 2026 B&amp;B Express. All rights reserved.</span>
+        <nav aria-label="Pháp lý">
+          <a href="dieu-khoan.html">Điều khoản sử dụng</a>
+          <a href="bao-mat.html">Chính sách bảo mật</a>
+          <a href="lien-he.html">Liên hệ</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <div class="callbar">
+    <a class="btn" href="tel:0941192193">Gọi</a>
+    <a class="btn light" href="https://zalo.me/0941192193" target="_blank" rel="noopener">Zalo</a>
+  </div>
+  <script src="js/site.js"></script>
+  <script src="js/slides.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/flow.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/consult.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>
