@@ -451,6 +451,11 @@ html.motion .consult-msg.ok { animation: msg-in .4s ease; }
 .band .card { color: var(--ink); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .band .card:hover { transform: translateY(-4px); border-color: var(--orange); box-shadow: 0 12px 24px rgba(0, 49, 116, .16); }
 .band .card p { color: var(--muted); }
+.map-frame {
+  display: block; width: 100%; height: 220px; margin-top: 12px;
+  border: 0; border-radius: 12px; background: #e7eef6;
+}
+.card .map-frame + p { margin-top: 12px; }
 
 .page-head { background: var(--bg); padding: 28px 0 8px; }
 .page-head h1 { font-size: 34px; }
@@ -484,12 +489,6 @@ footer.site::before {
   background-image: radial-gradient(rgba(186, 216, 255, .55) 1.1px, transparent 1.25px);
   background-size: 15px 15px;
   mask-image: radial-gradient(ellipse at 24% 42%, #000 0%, transparent 70%);
-}
-.foot-photo {
-  position: absolute; top: 0; right: 0; bottom: 42px; width: min(36%, 440px); pointer-events: none;
-  background:
-    linear-gradient(90deg, #041e4a 0%, #041e4a 22%, rgba(4, 30, 74, .55) 55%, rgba(4, 30, 74, .12) 100%),
-    url("../assets/slides/1.jpg") 78% 42% / cover no-repeat;
 }
 .foot-main {
   position: relative; display: grid;
@@ -555,7 +554,6 @@ footer.site h3::after {
   .header-actions { gap: 8px; }
   .phone span { display: none; }
   .grid-3, .grid-2, .steps, .row-tools, .foot-main, .line, .perks { grid-template-columns: 1fr; }
-  .foot-photo { display: none; }
   .foot-bar-inner { flex-direction: column; align-items: flex-start; }
   .foot-brand p { max-width: none; }
   .routes-head { flex-direction: column; align-items: stretch; }
