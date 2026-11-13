@@ -364,7 +364,9 @@ a.routes-all:hover { background: var(--orange); }
   content: ""; width: 42px; height: 3px; border-radius: 3px; background: var(--orange);
 }
 .reviews-lead { margin: 10px auto 26px; max-width: 560px; text-align: center; color: #d7e6f8; }
-.reviews-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+.reviews-stage {
+  display: grid; grid-template-columns: minmax(0, 640px); justify-content: center; gap: 36px;
+}
 .quote-card {
   position: relative; background: #fff; color: var(--navy); border-radius: 22px;
   padding: 28px 26px 18px; box-shadow: 0 16px 40px rgba(0, 20, 60, .25);
@@ -380,7 +382,7 @@ a.routes-all:hover { background: var(--orange); }
 .quote-foot strong { display: block; font-size: 14px; }
 .stars { color: #f5b400; letter-spacing: 1px; font-size: 14px; }
 .quote-time { margin-left: auto; color: #7b8ba0; font-size: 13px; }
-.chat-stack { position: relative; min-height: 240px; }
+.chat-stack { position: relative; width: min(100%, 420px); margin: 0 auto; min-height: 220px; }
 .chat-card {
   background: linear-gradient(180deg, #eef6ff, #d9ebe4); color: #1b2430; border-radius: 18px;
   padding: 16px; box-shadow: 0 14px 30px rgba(0, 20, 60, .28);
@@ -578,8 +580,7 @@ footer.site h3::after {
   .flow-title { font-size: 26px; }
   .why-grid { grid-template-columns: 1fr 1fr; gap: 22px 12px; }
   .why-title { font-size: 26px; }
-  .reviews-stage { grid-template-columns: 1fr; }
-  .chat-stack { display: none; }
+  .chat-stack { width: min(100%, 360px); }
   .reviews-title { font-size: 26px; }
   .quote-text { font-size: 16px; }
   .consult-grid, .consult-row { grid-template-columns: 1fr; }

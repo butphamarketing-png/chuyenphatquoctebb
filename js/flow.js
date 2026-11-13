@@ -1,7 +1,6 @@
 (function () {
   var steps = [].slice.call(document.querySelectorAll(".flow-steps li"));
   if (!steps.length) return;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var n = 0;
 
   function paint() {
@@ -12,7 +11,6 @@
   }
 
   paint();
-  if (reduce) return;
   window.setInterval(function () {
     n += 1;
     if (n >= steps.length) {

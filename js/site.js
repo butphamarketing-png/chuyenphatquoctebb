@@ -12,7 +12,6 @@ menuBtn?.addEventListener("click", () => {
   btn.setAttribute("aria-label", "Lên đầu trang");
   btn.innerHTML = '<svg viewBox="0 0 36 36" aria-hidden="true"><circle class="ring" cx="18" cy="18" r="16"></circle><path d="M18 23V14M13.5 17.5 18 13l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
   document.body.appendChild(btn);
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function onScroll() {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     var p = max > 0 ? window.scrollY / max : 0;
@@ -22,7 +21,7 @@ menuBtn?.addEventListener("click", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
   btn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
 

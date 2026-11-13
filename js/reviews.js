@@ -21,7 +21,6 @@
   var chatTime = root.querySelector(".chat-time");
   var dots = root.querySelector(".rev-dots");
   var index = 0;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   slides.forEach(function (_, i) {
     var button = document.createElement("button");
@@ -46,7 +45,7 @@
     [].forEach.call(dots.children, function (dot, n) {
       dot.classList.toggle("on", n === index);
     });
-    if (!reduce && text.textContent && text.textContent !== slide.text) {
+    if (text.textContent && text.textContent !== slide.text) {
       text.style.opacity = "0";
       if (mini) mini.style.opacity = "0";
       window.setTimeout(function () { paint(slide); }, 180);
@@ -58,6 +57,5 @@
   root.querySelector(".rev-prev").addEventListener("click", function () { show(index - 1); });
   root.querySelector(".rev-next").addEventListener("click", function () { show(index + 1); });
   show(0);
-  if (reduce) return;
   window.setInterval(function () { show(index + 1); }, 4000);
 })();
