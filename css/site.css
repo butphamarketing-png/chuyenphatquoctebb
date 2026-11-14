@@ -491,6 +491,9 @@ input, select {
 .tool-links a:hover { border-color: var(--orange); }
 .tool-links strong { display: block; color: var(--navy); margin-bottom: 4px; }
 .hs-hit, .prov { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.prov { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.prov p { margin: 0; color: var(--muted); }
+.prov .ghost { width: auto; font-weight: 800; color: var(--navy); }
 .hs-hit b, .prov b { color: var(--navy); }
 .chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip-grid button, .region-tabs button { font: inherit; }

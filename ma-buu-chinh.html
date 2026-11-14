@@ -40,11 +40,13 @@
     </div>
   </header>
   <main>
-    <section class="page-head"><div class="wrap"><h1>Mã bưu chính Việt Nam</h1><p class="lead">Nhóm mã của 34 tỉnh, thành sau sắp xếp năm 2025. Mã 5 số của từng phường, xã tra trên cổng chính thức.</p></div></section>
+    <section class="page-head"><div class="wrap"><h1>Mã bưu chính Việt Nam</h1><p class="lead">3.321 phường, xã, đặc khu. Mỗi nơi một mã 5 số, theo Quyết định 2334/QĐ-BKHCN ngày 24/08/2025.</p></div></section>
     <section class="section"><div class="wrap">
-      <p class="note">Nguồn nhóm mã: công bố mã bưu chính quốc gia. Địa chỉ cũ và mới đối chiếu tại <a href="https://diachi.vnpost.vn/" target="_blank" rel="noopener">diachi.vnpost.vn</a>. Mã phường tra tại <a href="https://mabuuchinh.vn/" target="_blank" rel="noopener">mabuuchinh.vn</a>.</p>
+      <p class="note">Hai số đầu là nhóm tỉnh. Đủ 5 số mới là mã của phường, xã. Nhiều nơi trùng tên, xem đúng tỉnh. Địa chỉ cũ đối chiếu tại <a href="https://diachi.vnpost.vn/" target="_blank" rel="noopener">diachi.vnpost.vn</a>. Giấy tờ chính thức đối chiếu <a href="https://mabuuchinh.vn/" target="_blank" rel="noopener">mabuuchinh.vn</a>. Dữ liệu mở CC BY 4.0, ghi theo quyết định trên.</p>
       <form class="panel" action="#">
-        <div class="field"><label for="post-q">Tên tỉnh hoặc thành phố</label><input id="post-q" placeholder="Ví dụ: Sài Gòn, Đà Nẵng, Huế"></div>
+        <div class="field"><label for="post-q">Tên phường, xã hoặc mã 5 số</label><input id="post-q" placeholder="Ví dụ: Sài Gòn, Hoàn Kiếm, 71016"></div>
+        <div class="field"><label for="post-prov">Tỉnh, thành</label><select id="post-prov"><option value="">Tất cả</option></select></div>
+        <p class="chip-grid"><button type="button" class="ghost" data-post="Sài Gòn">Sài Gòn</button><button type="button" class="ghost" data-post="Hoàn Kiếm">Hoàn Kiếm</button><button type="button" class="ghost" data-post="Hải Châu">Hải Châu</button><button type="button" class="ghost" data-post="Ninh Kiều">Ninh Kiều</button></p>
         <div class="result" id="post-out"></div>
       </form>
     </div></section>
@@ -103,5 +105,6 @@
   </footer>
   <div class="callbar"><a class="btn" href="tel:0941192193">Gọi</a><a class="btn light" href="https://zalo.me/0941192193" target="_blank" rel="noopener">Zalo</a></div>
   <script src="js/site.js"></script>
+  <script src="js/postal-data.js"></script>
   <script src="js/postal.js"></script>
 </body></html>
