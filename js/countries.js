@@ -1,5 +1,13 @@
 (function () {
   var QUOTE = { US: 1, CA: 1, AU: 1, GB: 1, DE: 1, KR: 1, JP: 1 };
+  var PAGES = {
+    US: "gui-hang-di-my.html",
+    AU: "gui-hang-di-uc.html",
+    CA: "gui-hang-di-canada.html",
+    GB: "gui-hang-di-anh.html",
+    KR: "gui-hang-di-han-quoc.html",
+    JP: "gui-hang-di-nhat-ban.html"
+  };
   var COUNTRIES = [
     { code: "US", name: "Mỹ", region: "bac-my" },
     { code: "CA", name: "Canada", region: "bac-my" },
@@ -59,6 +67,7 @@
   }
 
   function hrefOf(item) {
+    if (PAGES[item.code]) return PAGES[item.code];
     if (QUOTE[item.code]) return "bao-gia.html?country=" + item.code;
     return "lien-he.html";
   }

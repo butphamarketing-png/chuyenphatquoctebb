@@ -757,3 +757,23 @@ body:has(.loader) { overflow: hidden; }
 .country-card span { flex: 1; min-width: 0; }
 .country-card i { color: #9aa8b8; font-style: normal; font-weight: 600; }
 .country-empty { text-align: center; color: var(--muted); margin: 12px 0 0; }
+.prose { max-width: 760px; }
+.prose h2 { font-size: 22px; margin: 22px 0 8px; }
+.prose p, .prose li { color: #3d4c5f; }
+.prose ul { margin: 0 0 14px; padding-left: 18px; }
+.prose .btn { margin: 0 8px 8px 0; }
+.post-list, .review-list { display: grid; gap: 12px; }
+.post-card, .review-item {
+  display: flex; flex-direction: column; gap: 6px;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+  color: var(--navy);
+}
+.post-card strong { font-size: 18px; }
+.post-card span, .review-item .btn { align-self: flex-start; }
+.reviews-more { text-align: center; margin: 8px 0 18px; }
+.shot { border: 0; border-radius: 16px; padding: 16px; max-width: 420px; }
+.shot::backdrop { background: rgba(0, 20, 40, .45); }
+.lead-scroll { overflow-x: auto; }
+.lead-table table { width: 100%; border-collapse: collapse; background: #fff; }
+.lead-table th, .lead-table td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; vertical-align: top; }
+.lead-table th { color: var(--navy); font-size: 13px; }
