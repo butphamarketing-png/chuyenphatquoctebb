@@ -41,15 +41,76 @@ document.querySelectorAll(".nav-item > a").forEach((link) => {
   else if (/\/ko\//.test(path)) lang = "ko";
   else if (/\/ja\//.test(path)) lang = "ja";
   else if (/\/zh-tw\//.test(path)) lang = "zh-tw";
-  var root = lang === "vi" ? (/\/bai-viet\//.test(path) ? "../" : "") : "../";
+  var inArticles = /\/bai-viet\//.test(path);
+  var root = lang === "vi" ? (inArticles ? "../" : "") : "../";
   var actions = document.querySelector(".header-actions");
   if (actions && !actions.querySelector(".lang-select")) {
     var sel = document.createElement("select");
     sel.className = "lang-select";
     sel.setAttribute("aria-label", "Ngôn ngữ");
+    var file = path.split("/").filter(Boolean).pop() || "index.html";
+    var viToEn = {
+      "index.html": "index.html",
+      "gioi-thieu.html": "about.html",
+      "dich-vu.html": "services.html",
+      "quoc-gia.html": "countries.html",
+      "bai-viet.html": "articles.html",
+      "bao-gia.html": "quote.html",
+      "tra-cuu.html": "tracking.html",
+      "cong-cu.html": "tools.html",
+      "lien-he.html": "contact.html",
+      "hang-cam.html": "restricted.html",
+      "hs-code.html": "hs.html",
+      "ma-buu-chinh.html": "postal.html",
+      "dieu-khoan.html": "terms.html",
+      "bao-mat.html": "privacy.html",
+      "boi-thuong.html": "claims.html",
+      "khieu-nai.html": "complaints.html",
+      "hang-dhl.html": "dhl.html",
+      "hang-fedex.html": "fedex.html",
+      "hang-ups.html": "ups.html",
+      "phan-hoi.html": "reviews.html"
+    };
+    var articleMap = {
+      "gui-hang-di-my.html": "article-us.html",
+      "sau-tuyen-pho-bien.html": "article-routes.html",
+      "cach-tinh-cuoc.html": "article-rates.html",
+      "can-the-tich.html": "article-cbm.html",
+      "tra-cuu-van-don.html": "article-tracking.html",
+      "gui-pin-laptop.html": "article-batteries.html",
+      "giay-to-gui-hang.html": "article-papers.html",
+      "gui-hang-co-dong-thue-khong.html": "article-duty.html",
+      "dong-goi-hang.html": "article-packing.html",
+      "khai-gia-tri-hang.html": "article-value.html",
+      "gui-qua-va-hanh-ly-du-hoc.html": "article-gifts.html",
+      "gui-hang-duong-bien.html": "article-sea.html",
+      "ban-tin-quy-dinh.html": "article-rules.html"
+    };
+    var enArticle = {};
+    Object.keys(articleMap).forEach(function (key) { enArticle[articleMap[key]] = key; });
+    var enToVi = {};
+    Object.keys(viToEn).forEach(function (key) { enToVi[viToEn[key]] = key; });
+    var viHref = root + "index.html";
+    var enHref = root + "en/index.html";
+    if (lang === "en" && enArticle[file]) {
+      viHref = "../bai-viet/" + enArticle[file];
+      enHref = file;
+    } else if (lang === "en") {
+      viHref = "../" + (enToVi[file] || "index.html");
+      enHref = enToVi[file] ? file : "index.html";
+    } else if (lang === "vi" && articleMap[file] && inArticles) {
+      viHref = file;
+      enHref = "../en/" + articleMap[file];
+    } else if (lang === "vi" && inArticles) {
+      viHref = file;
+      enHref = "../en/articles.html";
+    } else if (lang === "vi") {
+      viHref = file;
+      enHref = "en/" + (viToEn[file] || "index.html");
+    }
     [
-      ["vi", "VI", root + "index.html"],
-      ["en", "EN", root + "en/index.html"],
+      ["vi", "VI", viHref],
+      ["en", "EN", enHref],
       ["ko", "KO", root + "ko/index.html"],
       ["ja", "JA", root + "ja/index.html"],
       ["zh-tw", "繁", root + "zh-tw/index.html"]

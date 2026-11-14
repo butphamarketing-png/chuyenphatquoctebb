@@ -33,7 +33,9 @@
     var query = fold(q.value.trim());
     var province = prov.value;
     if (query.length < 2 && !province) {
-      out.innerHTML = "<p>Gõ ít nhất 2 chữ, hoặc chọn tỉnh. Ví dụ: Sài Gòn, Hoàn Kiếm, 71016.</p>";
+      out.innerHTML = document.documentElement.lang === "en"
+        ? "<p>Type at least 2 letters, or choose a province. Example: Sài Gòn, Hoàn Kiếm, 71016.</p>"
+        : "<p>Gõ ít nhất 2 chữ, hoặc chọn tỉnh. Ví dụ: Sài Gòn, Hoàn Kiếm, 71016.</p>";
       return;
     }
     var hits = rows.filter(function (row) {
@@ -42,7 +44,9 @@
       return fold(row[0] + " " + row[1]).indexOf(query) !== -1 || row[2].indexOf(query) === 0;
     });
     if (!hits.length) {
-      out.innerHTML = "<p class=\"warn\">Không thấy phường, xã này. Tra thêm trên <a href=\"https://mabuuchinh.vn/\" target=\"_blank\" rel=\"noopener\">mabuuchinh.vn</a>.</p>";
+      out.innerHTML = document.documentElement.lang === "en"
+        ? "<p class=\"warn\">No ward matched. Check <a href=\"https://mabuuchinh.vn/\" target=\"_blank\" rel=\"noopener\">mabuuchinh.vn</a>.</p>"
+        : "<p class=\"warn\">Không thấy phường, xã này. Tra thêm trên <a href=\"https://mabuuchinh.vn/\" target=\"_blank\" rel=\"noopener\">mabuuchinh.vn</a>.</p>";
       return;
     }
     var shown = hits.slice(0, 40);
@@ -57,7 +61,7 @@
     var code = btn.getAttribute("data-copy");
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(code).then(function () {
-        btn.textContent = "Đã chép " + code;
+        btn.textContent = (document.documentElement.lang === "en" ? "Copied " : "Đã chép ") + code;
       });
     }
   });

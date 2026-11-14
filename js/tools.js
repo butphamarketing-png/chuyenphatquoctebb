@@ -4,10 +4,18 @@ const cbmOut = document.querySelector("#cbm-out");
 const volForm = document.querySelector("#vol-form");
 const volOut = document.querySelector("#vol-out");
 
+const en = document.documentElement.lang === "en";
+
 function line() {
   const row = document.createElement("div");
   row.className = "line";
-  row.innerHTML = `
+  row.innerHTML = en ? `
+    <input name="l" type="number" min="0" step="0.1" placeholder="Length cm" aria-label="Length cm">
+    <input name="w" type="number" min="0" step="0.1" placeholder="Width cm" aria-label="Width cm">
+    <input name="h" type="number" min="0" step="0.1" placeholder="Height cm" aria-label="Height cm">
+    <input name="q" type="number" min="1" step="1" value="1" placeholder="Pieces" aria-label="Pieces">
+    <button type="button" class="ghost">Remove</button>
+  ` : `
     <input name="l" type="number" min="0" step="0.1" placeholder="Dài cm" aria-label="Dài cm">
     <input name="w" type="number" min="0" step="0.1" placeholder="Rộng cm" aria-label="Rộng cm">
     <input name="h" type="number" min="0" step="0.1" placeholder="Cao cm" aria-label="Cao cm">
@@ -37,10 +45,12 @@ function calcCbm() {
     pieces += q;
   });
   const kg = num(document.querySelector("#actual-kg"));
-  let hint = "Dưới 22 kg thường đi chuyển phát nhanh.";
-  if (kg >= 250 || cbm >= 1.5) hint = "Từ 250 kg hoặc 1,5 CBM, hỏi báo riêng đường biển.";
-  else if (kg >= 22) hint = "Từ 22 kg có thể đi hàng gom đường biển.";
-  cbmOut.innerHTML = `<p>Tổng kiện: <strong>${pieces}</strong></p><p>Tổng CBM: <strong>${cbm.toFixed(3)}</strong></p><p>${hint}</p><p>Đây là gợi ý kích thước, không phải báo giá.</p>`;
+  let hint = en ? "Under 22 kg usually goes by express." : "Dưới 22 kg thường đi chuyển phát nhanh.";
+  if (kg >= 250 || cbm >= 1.5) hint = en ? "From 250 kg or 1.5 CBM, ask for a sea quote." : "Từ 250 kg hoặc 1,5 CBM, hỏi báo riêng đường biển.";
+  else if (kg >= 22) hint = en ? "From 22 kg, sea consolidation may fit." : "Từ 22 kg có thể đi hàng gom đường biển.";
+  cbmOut.innerHTML = en
+    ? `<p>Pieces: <strong>${pieces}</strong></p><p>Total CBM: <strong>${cbm.toFixed(3)}</strong></p><p>${hint}</p><p>This is a size check, not a quote.</p>`
+    : `<p>Tổng kiện: <strong>${pieces}</strong></p><p>Tổng CBM: <strong>${cbm.toFixed(3)}</strong></p><p>${hint}</p><p>Đây là gợi ý kích thước, không phải báo giá.</p>`;
 }
 
 add.addEventListener("click", () => line());
@@ -56,10 +66,12 @@ volForm.addEventListener("submit", (event) => {
   const actual = Number(data.get("kg"));
   const divisor = Number(data.get("divisor"));
   if (![l, w, h, actual, divisor].every((n) => Number.isFinite(n) && n > 0)) {
-    volOut.innerHTML = '<p class="warn">Nhập đủ kích thước, kg thực và hệ số.</p>';
+    volOut.innerHTML = en ? '<p class="warn">Enter size, actual kg and a divisor.</p>' : '<p class="warn">Nhập đủ kích thước, kg thực và hệ số.</p>';
     return;
   }
   const volumetric = (l * w * h) / divisor;
   const chargeable = Math.max(actual, volumetric);
-  volOut.innerHTML = `<p>Kg quy đổi: <strong>${volumetric.toFixed(2)}</strong></p><p>Kg tính cước: <strong>${chargeable.toFixed(2)}</strong></p><p>Kết quả không phải báo giá.</p>`;
+  volOut.innerHTML = en
+    ? `<p>Volumetric kg: <strong>${volumetric.toFixed(2)}</strong></p><p>Chargeable kg: <strong>${chargeable.toFixed(2)}</strong></p><p>This is not a quote.</p>`
+    : `<p>Kg quy đổi: <strong>${volumetric.toFixed(2)}</strong></p><p>Kg tính cước: <strong>${chargeable.toFixed(2)}</strong></p><p>Kết quả không phải báo giá.</p>`;
 });

@@ -12,11 +12,15 @@ function detect(code) {
   return null;
 }
 
+const en = document.documentElement.lang === "en";
+
 function urlFor(carrier, code) {
   const id = encodeURIComponent(code);
-  if (carrier === "dhl") return `https://www.dhl.com/vn-vi/home/tracking.html?submit=1&tracking-id=${id}`;
-  if (carrier === "fedex") return `https://www.fedex.com/fedextrack/?trknbr=${id}&locale=vi_VN`;
-  return `https://www.ups.com/track?loc=vi_VN&tracknum=${id}&requester=ST/trackdetails`;
+  if (carrier === "dhl") return en
+    ? `https://www.dhl.com/us-en/home/tracking.html?submit=1&tracking-id=${id}`
+    : `https://www.dhl.com/vn-vi/home/tracking.html?submit=1&tracking-id=${id}`;
+  if (carrier === "fedex") return `https://www.fedex.com/fedextrack/?trknbr=${id}&locale=${en ? "en_US" : "vi_VN"}`;
+  return `https://www.ups.com/track?loc=${en ? "en_US" : "vi_VN"}&tracknum=${id}&requester=ST/trackdetails`;
 }
 
 const names = { ups: "UPS", dhl: "DHL", fedex: "FedEx" };
@@ -28,16 +32,16 @@ form.addEventListener("submit", (event) => {
   const code = clean(form.code.value);
   if (!code) {
     hint.className = "warn";
-    hint.textContent = "Nhập mã vận đơn.";
+    hint.textContent = en ? "Enter a tracking number." : "Nhập mã vận đơn.";
     return;
   }
   const carrier = detect(code);
   if (!carrier) {
     hint.className = "warn";
-    hint.textContent = "Không nhận ra hãng. Kiểm tra lại mã.";
+    hint.textContent = en ? "Carrier not recognized. Check the number." : "Không nhận ra hãng. Kiểm tra lại mã.";
     return;
   }
   hint.className = "";
-  hint.textContent = `Nhận diện: ${names[carrier]}. Đang mở trang của hãng.`;
+  hint.textContent = en ? `Detected: ${names[carrier]}. Opening the carrier page.` : `Nhận diện: ${names[carrier]}. Đang mở trang của hãng.`;
   window.open(urlFor(carrier, code), "_blank", "noopener");
 });

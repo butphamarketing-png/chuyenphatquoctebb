@@ -35,6 +35,10 @@ function quote(code, kg) {
   return { card, kg, billed, vnd: billed * tier[2], perKg: tier[2], mode: "tier" };
 }
 
+const en = document.documentElement.lang === "en";
+const EN_NAME = { US: "United States", CA: "Canada", AU: "Australia", GB: "United Kingdom", DE: "Germany", KR: "South Korea", JP: "Japan" };
+function placeName(card, code) { return en ? EN_NAME[code] : card.name; }
+
 const form = document.querySelector("#quote-form");
 const result = document.querySelector("#quote-result");
 const params = new URLSearchParams(location.search);
@@ -47,30 +51,39 @@ form.addEventListener("submit", (event) => {
   const code = form.country.value;
   const kg = parseKg(form.weight.value);
   if (!code) {
-    result.innerHTML = '<p class="warn">Chọn nước nhận.</p>';
+    result.innerHTML = en ? '<p class="warn">Choose a destination.</p>' : '<p class="warn">Chọn nước nhận.</p>';
     return;
   }
   if (kg === null) {
-    result.innerHTML = '<p class="warn">Nhập số kg từ 0,1 đến 500.</p>';
+    result.innerHTML = en ? '<p class="warn">Enter a weight from 0.1 to 500 kg.</p>' : '<p class="warn">Nhập số kg từ 0,1 đến 500.</p>';
     return;
   }
   const card = RATES[code];
+  const name = placeName(card, code);
   if (card.phone) {
-    result.innerHTML = `<p><strong>${card.name}</strong> báo giá qua điện thoại.</p><p><a class="btn" href="tel:0941192193">Gọi 0941 192 193</a></p>`;
+    result.innerHTML = en
+      ? `<p><strong>${name}</strong> is quoted by phone.</p><p><a class="btn" href="tel:0941192193">Call 0941 192 193</a></p>`
+      : `<p><strong>${name}</strong> báo giá qua điện thoại.</p><p><a class="btn" href="tel:0941192193">Gọi 0941 192 193</a></p>`;
     return;
   }
   const q = quote(code, kg);
   const withVat = form.vat.checked ? Math.round(q.vnd * 1.08) : null;
   const detail = q.mode === "band"
-    ? `Cân tính cước ${q.billed} kg`
+    ? (en ? `Chargeable weight ${q.billed} kg` : `Cân tính cước ${q.billed} kg`)
     : `${q.billed} kg × ${money.format(q.perKg)} ₫/kg`;
-  const zalo = `https://zalo.me/0941192193?text=${encodeURIComponent(`B&B giá minh họa: ${card.name}, ${kg} kg, ${money.format(q.vnd)} đ, ${card.days} ngày`)}`;
+  const zalo = `https://zalo.me/0941192193?text=${encodeURIComponent(`B&B sample price: ${name}, ${kg} kg, ${money.format(q.vnd)} VND, ${card.days} days`)}`;
+  const tag = en ? "Sample price. This is not the B&amp;B rate card." : "Giá minh họa, chưa phải bảng giá của B & B";
+  const vatLine = withVat
+    ? (en ? `Before VAT: ${money.format(q.vnd)} ₫ · Multiplied by 1.08 to preview` : `Chưa VAT: ${money.format(q.vnd)} ₫ · Đã nhân 1,08 để xem`)
+    : (en ? "VAT 8% is not included" : "Chưa gồm VAT 8%");
+  const daysLine = en ? `Typical time: <strong>${card.days} days</strong>` : `Thời gian tham khảo: <strong>${card.days} ngày</strong>`;
+  const zaloLabel = en ? "Send on Zalo" : "Gửi Zalo";
   result.innerHTML = `
-    <p class="tag">Giá minh họa, chưa phải bảng giá của B & B</p>
+    <p class="tag">${tag}</p>
     <div class="price">${money.format(withVat ?? q.vnd)} ₫</div>
-    <p>${withVat ? `Chưa VAT: ${money.format(q.vnd)} ₫ · Đã nhân 1,08 để xem` : "Chưa gồm VAT 8%"}</p>
+    <p>${vatLine}</p>
     <p>${detail}</p>
-    <p>Thời gian tham khảo: <strong>${card.days} ngày</strong></p>
-    <p><a class="btn" href="${zalo}" target="_blank" rel="noopener">Gửi Zalo</a></p>
+    <p>${daysLine}</p>
+    <p><a class="btn" href="${zalo}" target="_blank" rel="noopener">${zaloLabel}</a></p>
   `;
 });

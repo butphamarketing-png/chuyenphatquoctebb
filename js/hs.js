@@ -82,7 +82,9 @@
     var query = fold(q.value.trim());
     var digits = query.replace(/\D/g, "");
     if (!query) {
-      out.innerHTML = "<p>Gõ tên hàng hoặc số chương. Ví dụ: cà phê, điện thoại, 61.</p>";
+      out.innerHTML = document.documentElement.lang === "en"
+        ? "<p>Type a product name or a chapter number. Chapter titles on this tool are in Vietnamese. Example: cà phê, điện thoại, 61.</p>"
+        : "<p>Gõ tên hàng hoặc số chương. Ví dụ: cà phê, điện thoại, 61.</p>";
       return;
     }
     var chapHits = chapters.filter(function (chap) {
@@ -93,7 +95,9 @@
       return blob.indexOf(query) !== -1 || (digits.length >= 2 && item.code.replace(/\D/g, "").indexOf(digits) === 0);
     });
     if (!chapHits.length && !goodHits.length) {
-      out.innerHTML = "<p class=\"warn\">Không thấy mã khớp. Đừng lấy một mã gần giống. Gọi 0941 192 193 để đối chiếu tên hàng.</p>";
+      out.innerHTML = document.documentElement.lang === "en"
+        ? "<p class=\"warn\">No matching code. Do not guess a nearby code. Call 0941 192 193.</p>"
+        : "<p class=\"warn\">Không thấy mã khớp. Đừng lấy một mã gần giống. Gọi 0941 192 193 để đối chiếu tên hàng.</p>";
       return;
     }
     var html = "";
